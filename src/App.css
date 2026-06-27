@@ -1,0 +1,47 @@
+.title {
+  font-size: 30px;
+  background-color: red;
+}
+
+.title2 {
+  color: white;
+}
+
+.title3 {
+  font-size: 50px;
+  margin: 50px;
+}
+
+.button {
+  background-color: green;
+  padding: 5px 15px;
+  color: wheat;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  border: 1px solid #000;
+  width: 20%;
+  height: 200px;
+  margin: 20px 10px;
+  text-align: center;
+  padding: 30px;
+}
+
+.page-home {
+  background-color: red;
+}
+
+.page-users {
+  background-color: green;
+}
+
+.page-user {
+  background-color: blue;
+}
