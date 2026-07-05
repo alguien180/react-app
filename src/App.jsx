@@ -9,6 +9,9 @@ import Users from './pages/Users'
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 import User from './pages/User'
 import NotFound from './pages/Not-found'
+import Login from './pages/Login'
+import PrivateRoutes from './router/Private-routes'
+import PublicRoutes from './router/Public-routes'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -29,6 +32,8 @@ function App() {
         lastname: 'Zuñiga'
     }
   ]
+
+  const isAuthenticated = false
 
   return (
     <>
@@ -52,14 +57,22 @@ function App() {
           <Link to="/" >Home</Link>
           <Link to="/users" >Users</Link>
           <Link to="/user">User</Link>
+          <Link to="/login">Login</Link>
         </nav>
 
         <br/>
 
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/users' element={<Users />} />
-          <Route path='/user/:id' element={<User />} />
+
+          <Route element={<PrivateRoutes isAuthenticated={isAuthenticated} />}>
+            <Route path='/' element={<Home />} />
+            <Route path='/users' element={<Users />} />
+            <Route path='/user/:id' element={<User />} />
+          </Route>
+
+          <Route element={<PublicRoutes isAuthenticated={isAuthenticated} />} >
+            <Route path='login' element={<Login />} />
+          </Route>
 
           <Route path='*' element={<NotFound />} />
         </Routes>
