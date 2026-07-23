@@ -45,3 +45,13 @@
 .page-user {
   background-color: blue;
 }
+
+.login-container {
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.label-login {
+  margin-top: 10px;
+}
